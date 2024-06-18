@@ -68,12 +68,15 @@ export default function Footer() {
     <footer className="bg-white" aria-labelledby="footer-heading">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 m">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
-            <img className="h-16" src={logo} alt="e-boostAcademy" />
-            <p className="text-md font-bold leading-6 text-gray-600 ml-10">
+          <div className="space-y-8 mx-auto">
+            <img className="h-16 mx-auto" src={logo} alt="e-boostAcademy" />
+            <div className="flex justify-center">
+                <p className="text-md font-bold leading-6 text-gray-600 ml-10 ">
               تواصل معنا
             </p>
-            <div className="flex space-x-6">
+            </div>
+            
+            <div className="flex justify-center space-x-6">
               {navigation.social.map((item) => (
                 <a
                   key={item.name}
@@ -87,8 +90,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:col-span-2 xl:col-span-1">
-              <div className="mt-10 md:mt-0">
+            <div className="md:col-span-2 xl:col-span-1 mx-auto">
+              <div className="mt-10 md:mt-0 ">
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -103,7 +106,7 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 mx-auto">
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
@@ -117,7 +120,7 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 mx-auto">
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
@@ -133,7 +136,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 text-center">
           <p className="text-xs leading-5 text-gray-500">
             &copy; 2024 E-BoostAcadamy, Inc. All rights reserved.
           </p>
