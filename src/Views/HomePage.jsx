@@ -5,6 +5,24 @@ import About from "../Components/About";
 import Stats from "../Components/Stats";
 import { InfiniteMovingCards } from "../Components/Infinite-moving-cards";
 import { motion } from "framer-motion";
+export const fadeIn = (direction, type, delay, duration) => ({
+  hidden: {
+    x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+    y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      type,
+      delay,
+      duration,
+      ease: "easeOut",
+    },
+  },
+});
 const testimonials = [
   {
     quote:
@@ -62,13 +80,18 @@ const HomePage = () => {
         </div>
         <About />
         <Stats />
-        <div className="h-[20rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <motion.div
+          initial="hidden"
+          viewport={{ once: true }}
+          whileInView="show"
+          variants={fadeIn("up", "tween", 0.2, 0.7)} 
+          className="h-[20rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
           <InfiniteMovingCards
             items={testimonials}
             direction="right"
             speed="slow"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

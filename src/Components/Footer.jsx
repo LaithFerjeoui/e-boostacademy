@@ -1,4 +1,23 @@
 import logo from "../../public/logo.png";
+import { motion } from "framer-motion";
+export const fadeIn = (direction, type, delay, duration) => ({
+  hidden: {
+    x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+    y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      type,
+      delay,
+      duration,
+      ease: "easeOut",
+    },
+  },
+});
 const navigation = {
   support: [
     { name: "إكتشف", href: "#" },
@@ -66,7 +85,12 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 m">
+      <motion.div
+          initial="hidden"
+          viewport={{ once: true }}
+          whileInView="show"
+          variants={fadeIn("up", "tween", 0.2, 0.7)}
+           className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 m">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 mx-auto">
             <img className="h-16 mx-auto" src={logo} alt="e-boostAcademy" />
@@ -141,7 +165,7 @@ export default function Footer() {
             &copy; 2024 E-BoostAcadamy, Inc. All rights reserved.
           </p>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
