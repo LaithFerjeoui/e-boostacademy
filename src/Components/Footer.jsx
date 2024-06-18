@@ -70,12 +70,12 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 mx-auto">
             <img className="h-16 mx-auto" src={logo} alt="e-boostAcademy" />
-            <div className="flex justify-center">
-                <p className="text-md font-bold leading-6 text-gray-600 ml-10 ">
-              تواصل معنا
-            </p>
+            <div className="flex justify-center ">
+              <p className="text-md font-bold leading-6 text-gray-600 ">
+                تواصل معنا
+              </p>
             </div>
-            
+
             <div className="flex justify-center space-x-6">
               {navigation.social.map((item) => (
                 <a
