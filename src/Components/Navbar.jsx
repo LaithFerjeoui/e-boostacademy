@@ -1,14 +1,23 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../../public/logo.png";
 import PrimaryButton from "./PrimaryButton";
 import SecondaryButton from "./SecondaryButton";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+  // State to manage active button
+  const [activeButton, setActiveButton] = useState("home"); // Initialize with your default active button
+
+  // Function to handle click on navigation buttons
+  const handleButtonClick = (buttonName) => {
+    setActiveButton(buttonName);
+    // You can also perform other actions here, like navigating to a different route
+  };
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -33,26 +42,42 @@ export default function Navbar() {
               <div className="flex items-center gap-5 ">
                 <div className="flex  h-16">
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-
-                    <a
-                      href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    <Link
+                      to="/points"
+                      onClick={() => handleButtonClick("points")}
+                      className={classNames(
+                        "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
+                        activeButton === "points"
+                          ? "border-indigo-500 text-gray-900"
+                          : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      )}
                     >
                       نقاط البيع
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    </Link>
+                    <Link
+                      to="/offers"
+                      onClick={() => handleButtonClick("offers")} // Example: Handle click for offers button
+                      className={classNames(
+                        "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
+                        activeButton === "offers"
+                          ? "border-indigo-500 text-gray-900"
+                          : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      )}
                     >
                       عروضنا
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    </Link>
+                    <Link
+                      to="/"
+                      onClick={() => handleButtonClick("home")} // Example: Handle click for home button
+                      className={classNames(
+                        "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
+                        activeButton === "home"
+                          ? "border-indigo-500 text-gray-900"
+                          : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      )}
                     >
                       الرئيسية
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-shrink-0 items-center">
