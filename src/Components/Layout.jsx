@@ -12,9 +12,9 @@ const Layout = ({ flag }) => {
     <>
       <Navbar />
       {flag === "home" && <HomePage />}
-      {flag === "offers" && <Offers />}
+      {/* {flag === "offers" && <Offers />}
       {flag === "points" && <Points />}
-      {flag === "about" && <AboutUs />}
+      {flag === "about" && <AboutUs />} */}
       <Footer />
     </>
   );
