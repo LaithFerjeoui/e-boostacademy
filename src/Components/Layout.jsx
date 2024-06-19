@@ -4,6 +4,8 @@ import HomePage from "../Views/HomePage";
 import Footer from "./Footer";
 import Offers from "../Views/Offers";
 import Points from "../Views/Points";
+import AboutUs from "../Views/AboutUs";
+
 
 const Layout = ({ flag }) => {
   return (
@@ -12,6 +14,7 @@ const Layout = ({ flag }) => {
       {flag === "home" && <HomePage />}
       {flag === "offers" && <Offers />}
       {flag === "points" && <Points />}
+      {flag === "about" && <AboutUs />}
       <Footer />
     </>
   );

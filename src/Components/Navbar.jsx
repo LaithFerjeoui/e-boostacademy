@@ -52,7 +52,7 @@ export default function Navbar() {
                           : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
                       )}
                     >
-                      نقاط البيع
+                      أساتذتنا
                     </Link>
                     <Link
                       to="/offers"
@@ -65,6 +65,18 @@ export default function Navbar() {
                       )}
                     >
                       عروضنا
+                    </Link>
+                    <Link
+                      to="/about"
+                      onClick={() => handleButtonClick("about")} // Example: Handle click for home button
+                      className={classNames(
+                        "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
+                        activeButton === "about"
+                          ? "border-indigo-500 text-gray-900"
+                          : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                      )}
+                    >
+                      من نحن
                     </Link>
                     <Link
                       to="/"
@@ -98,10 +110,23 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
-            <Disclosure.Button
+              <Disclosure.Button
                 as="a"
                 href="/"
                 onClick={() => handleButtonClick("home")}
+                className={classNames(
+                  "text-right block border-l-4 py-2 pl-3 pr-4 text-base font-medium",
+                  activeButton === "home"
+                    ? "border-indigo-500 bg-indigo-50 text-indigo-700"
+                    : "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                )}
+              >
+                الرئيسية
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/about"
+                onClick={() => handleButtonClick("about")}
                 className={classNames(
                   "text-right block border-l-4 py-2 pl-3 pr-4 text-base font-medium",
                   activeButton === "home"
@@ -135,7 +160,7 @@ export default function Navbar() {
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
                 )}
               >
-                نقاط البيع
+                أساتذتنا
               </Disclosure.Button>
             </div>
             <div className="border-t border-gray-200 pb-3 pt-4">

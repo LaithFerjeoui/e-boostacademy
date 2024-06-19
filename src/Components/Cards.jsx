@@ -1,7 +1,9 @@
+import PrimaryButton from "./PrimaryButton";
+
 const Cards = ({ title, price, description, details }) => {
   return (
-    <div className="rounded-lg shadow-secondary-1 w-[350px] h-[450px] flex flex-col mt-4 shadow-xl hover:scale-105 duration-200">
-      <div className="h-1/2 bg-indigo-400 flex flex-col justify-center h-[160px] items-center p-4">
+    <div className=" shadow-secondary-1 w-[350px] h-[450px] flex flex-col mt-4 shadow-xl hover:scale-105 duration-200">
+      <div className="h-1/2 rounded-lg bg-indigo-400 flex flex-col justify-center h-[160px] items-center p-4">
         <h3 className="text-white text-lg font-bold">{title}</h3>
         <h3 className="text-white text-4xl font-bold mt-2">{price}</h3>
         <p className="mt-4 text-base text-center text-white font-normal">
@@ -32,9 +34,7 @@ const Cards = ({ title, price, description, details }) => {
         </ul>
       </div>
       <div className="flex justify-center mt-6 ">
-        <button className="bg-indigo-400 text-white rounded-lg px-2 pt-2 pb-2 mb-4 ml-2 hover:bg-gray-100 hover:text-gray-600 w-full">
-          اشترك الآن
-        </button>
+        <PrimaryButton text={"اشترك الآن"} flag={true}/> 
       </div>
     </div>
   );
