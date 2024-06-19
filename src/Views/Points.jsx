@@ -1,8 +1,11 @@
 import React from 'react'
+import Teachers from '../Components/Teachers';
 
 const Points = () => {
   return (
-    <div>Points</div>
+    <>
+    <Teachers/>
+    </>
   )
 }
 

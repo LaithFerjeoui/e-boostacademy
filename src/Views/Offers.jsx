@@ -1,6 +1,5 @@
 import React from "react";
-import { CardsInfo } from "../utils/constants";
-import Cards from "../Components/Cards";
+import OfferCards from '../Components/OfferCards';
 import Features from "../Components/Features";
 const Offers = () => {
   return (
@@ -12,15 +11,7 @@ const Offers = () => {
           </h1>
         </div>
         <div className="flex justify-center items-center flex-wrap gap-4 mt-10">
-          {CardsInfo?.map((card, index) => (
-            <Cards
-              key={index}
-              title={card.title}
-              price={card.price}
-              description={card.description}
-              details={card.details}
-            />
-          ))}
+        <OfferCards/>
         </div>
       </div>
       <div>
