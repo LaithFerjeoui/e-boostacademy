@@ -30,15 +30,15 @@ export default function Stats() {
           viewport={{ once: true }}
           whileInView="show"
           variants={fadeIn("up", "tween", 0.2, 0.7)}
-         className="bg-gray-900 my-16 rounded-lg">
+         className="bg-blue-200 my-16 rounded-lg max-w-7xl mx-auto">
       <div className="mx-auto max-w-7xl ">
-        <div className="grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-1 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-px bg-white/20 sm:grid-cols-1 lg:grid-cols-3">
           {stats.map((stat) => (
             <div
               key={stat.name}
-              className="bg-gray-900 px-4 py-6 sm:px-6 lg:px-8 rounded-lg text-center"
+              className="bg-blue-500 px-4 py-6 sm:px-6 lg:px-8 rounded-lg text-center my-1 mx-3"
             >
-              <p className="text-sm font-medium leading-6 text-gray-400">
+              <p className="text-sm font-medium leading-6 text-gray-200">
                 {stat.name}
               </p>
               <p className="mt-2 flex justify-center items-baseline gap-x-2">

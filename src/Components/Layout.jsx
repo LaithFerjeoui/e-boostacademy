@@ -6,18 +6,16 @@ import Offers from "../Views/Offers";
 import Points from "../Views/Points";
 import AboutUs from "../Views/AboutUs";
 
-
-const Layout = ({ flag }) => {
-  return (
-    <>
-      <Navbar />
-      {flag === "home" && <HomePage />}
-       {flag === "offers" && <Offers />} 
-      {/* {flag === "points" && <Points />} */}
-       {flag === "about" && <AboutUs />} 
-      <Footer />
-    </>
-  );
-};
+const Layout = ({ flag }) => (
+  <>
+    <Navbar />
+    
+    {flag === "home" && <HomePage />}
+    {flag === "offers" && <Offers />}
+    {flag === "points" && <Points />} 
+    {flag === "about" && <AboutUs />}
+    <Footer />
+  </>
+);
 
 export default Layout;

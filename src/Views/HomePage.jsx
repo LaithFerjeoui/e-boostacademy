@@ -42,58 +42,57 @@ const testimonials = [
 ];
 const HomePage = () => {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl ">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between flex-wrap mt-20 px-4 lg:px-0">
-          <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full lg:w-1/2 mb-8 lg:mb-0"
-          >
-            <video autoPlay muted controls className="w-full rounded-xl">
-              <source src={vid} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full lg:w-1/3 flex flex-col items-center"
-          >
-            <img
-              className="block h-32 w-auto mb-4"
-              src={logo}
-              alt="e-boostacademy"
-            />
-            <span className="text-center lg:text-right text-gray-700">
-              منهج مبتكر لنقل المعرفة منصة تعليمية تقدم دروس في جميع المواد
-              الأساسية للأقسام من الثالثة إلى السادسة
-            </span>
-          </motion.div>
-        </div>
-        <div className="flex justify-center items-center w-full mt-24 pb-4">
-          <h2 className=" font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-purple-600 to-blue-800 ">
-            من نحن
-          </h2>
-        </div>
-        <About />
-        <Stats />
+    <>
+      <div className="w-full flex flex-col lg:flex-row items-center justify-around flex-wrap mt-20 px-4 lg:px-0">
         <motion.div
-          initial="hidden"
-          viewport={{ once: true }}
-          whileInView="show"
-          variants={fadeIn("up", "tween", 0.2, 0.7)} 
-          className="h-[20rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="right"
-            speed="slow"
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full lg:w-1/2 mb-8 lg:mb-0"
+        >
+          <video autoPlay muted controls className="w-full rounded-xl">
+            <source src={vid} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full lg:w-1/3 flex flex-col items-center"
+        >
+          <img
+            className="block h-32 w-auto mb-4"
+            src={logo}
+            alt="e-boostacademy"
           />
+          <span className="text-center lg:text-right text-gray-700">
+            منهج مبتكر لنقل المعرفة منصة تعليمية تقدم دروس في جميع المواد
+            الأساسية للأقسام من الثالثة إلى السادسة
+          </span>
         </motion.div>
       </div>
-    </div>
+      <div className="flex justify-center items-center w-full mt-24 pb-4">
+        <h2 className=" font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-purple-600 to-blue-800 ">
+          من نحن
+        </h2>
+      </div>
+      <About />
+      <Stats />
+      <motion.div
+        initial="hidden"
+        viewport={{ once: true }}
+        whileInView="show"
+        variants={fadeIn("up", "tween", 0.2, 0.7)}
+        className="h-[20rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden"
+      >
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+      </motion.div>
+    </>
   );
 };
 

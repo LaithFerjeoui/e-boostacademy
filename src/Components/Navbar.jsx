@@ -12,7 +12,7 @@ function classNames(...classes) {
 export default function Navbar() {
   // State to manage active button
   const [activeButton, setActiveButton] = useState("home"); // Initialize with your default active button
-
+  console.log(activeButton);
   // Function to handle click on navigation buttons
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -43,7 +43,7 @@ export default function Navbar() {
                 <div className="flex  h-16">
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                     <Link
-                      to="/points"
+                      to="/teachers"
                       onClick={() => handleButtonClick("points")}
                       className={classNames(
                         "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium",
@@ -110,9 +110,8 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
-              <Disclosure.Button
-                as="a"
-                href="/"
+              <Link
+                to="/"
                 onClick={() => handleButtonClick("home")}
                 className={classNames(
                   "text-right block border-l-4 py-2 pl-3 pr-4 text-base font-medium",
@@ -122,23 +121,21 @@ export default function Navbar() {
                 )}
               >
                 الرئيسية
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/about"
+              </Link>
+              <Link
+                to="/about"
                 onClick={() => handleButtonClick("about")}
                 className={classNames(
                   "text-right block border-l-4 py-2 pl-3 pr-4 text-base font-medium",
-                  activeButton === "home"
+                  activeButton === "about"
                     ? "border-indigo-500 bg-indigo-50 text-indigo-700"
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
                 )}
               >
-                الرئيسية
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/offers"
+                من نحن
+              </Link>
+              <Link
+                to="/offers"
                 onClick={() => handleButtonClick("offers")}
                 className={classNames(
                   "text-right block border-l-4 py-2 pl-3 pr-4 text-base font-medium",
@@ -148,10 +145,9 @@ export default function Navbar() {
                 )}
               >
                 عروضنا
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/points"
+              </Link>
+              <Link
+                to="/teachers"
                 onClick={() => handleButtonClick("points")}
                 className={classNames(
                   "text-right block border-l-4 py-2 pl-3 pr-4 text-base font-medium",
@@ -161,7 +157,7 @@ export default function Navbar() {
                 )}
               >
                 أساتذتنا
-              </Disclosure.Button>
+              </Link>
             </div>
             <div className="border-t border-gray-200 pb-3 pt-4">
               <div className="flex items-center justify-center px-4">

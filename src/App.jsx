@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     element: <Layout flag={"offers"} />,
   },
   {
-    path: "/points",
+    path: "/teachers",
     element: <Layout flag={"points"} />,
   },
   {

@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckIcon } from "@heroicons/react/20/solid";
-
+import { motion } from "framer-motion";
 const tiers = [
   {
     name: "عرض النجاح",
@@ -45,7 +45,11 @@ function classNames(...classes) {
 }
 export default function OfferCards() {
   return (
-    <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+     <motion.div
+    initial={{ opacity: 0, scale: 0.6, y: -20 }}
+    animate={{ opacity: 1, scale: 1, y: 0 }}
+    transition={{ duration: 0.2 }}
+    className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
       {tiers.map((tier, tierIdx) => (
         <div
           key={tier.id}
@@ -58,7 +62,7 @@ export default function OfferCards() {
         >
           <div>
             <div className="flex items-center justify-end gap-x-24">
-            {tier.mostPopular ? (
+              {tier.mostPopular ? (
                 <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-indigo-600">
                   recommanded
                 </p>
@@ -72,7 +76,6 @@ export default function OfferCards() {
               >
                 {tier.name}
               </h3>
-             
             </div>
             <p className="mt-6 flex justify-end items-baseline gap-x-1">
               <span className="text-4xl font-bold tracking-tight text-gray-900 ">
@@ -111,6 +114,6 @@ export default function OfferCards() {
           </a>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
