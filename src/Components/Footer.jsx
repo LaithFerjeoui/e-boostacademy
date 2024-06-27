@@ -94,12 +94,12 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:col-span-2 xl:col-span-1 mx-auto">
               <div className="mt-10 md:mt-0 ">
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-4 w-24">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        className="text-sm leading-6 text-gray-600 hover:text-gray-900 flex justify-center"
                       >
                         {item.name}
                       </a>
@@ -109,12 +109,12 @@ export default function Footer() {
               </div>
             </div>
             <div className="md:col-span-1 mx-auto">
-              <ul role="list" className="mt-6 space-y-4">
+              <ul role="list" className="mt-6 space-y-4 w-24">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      className="text-sm leading-6 text-gray-600 hover:text-gray-900 flex justify-center"
                     >
                       {item.name}
                     </a>
@@ -123,12 +123,12 @@ export default function Footer() {
               </ul>
             </div>
             <div className="md:col-span-1 mx-auto">
-              <ul role="list" className="mt-6 space-y-4">
+              <ul role="list" className="mt-6 space-y-4 w-24">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      className="text-sm leading-6 text-gray-600 hover:text-gray-900 flex justify-center"
                     >
                       {item.name}
                     </a>
